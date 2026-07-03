@@ -27,6 +27,12 @@ function sum (coins,ratio){
 
 }
 
+function getCoins () {
+    let coins = localStorage.getItem("coins")
+    console.log(coins)
+}
+getCoins()
+
 
 
 
