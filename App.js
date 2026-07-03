@@ -21,6 +21,12 @@ function setDefaultCoins () {
     }}
     setDefaultCoins()
 
+function sum (coins,ratio){
+    let total = coins+ratio
+    coinValeu.innerHTML= total
+
+}
+
 
 
 
