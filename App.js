@@ -1,5 +1,6 @@
 const hamsterBtn = document.querySelector("#hamsterBtn")
 hamsterBtn.addEventListener("click",function () {
+    sum(getCoins(),getRatio())
 })
 
 
