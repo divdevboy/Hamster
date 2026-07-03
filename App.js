@@ -22,11 +22,14 @@ function setDefaultCoins () {
     setDefaultCoins()
 
 function getRatio (){
-   let ratio = localStorage.getItem("ratio")
+    let ratio = localStorage.getItem("ratio")
     return ratio
 }
 getRatio()
 
-
-
+function getCoins () {
+    let coins = localStorage.getItem("coins")
+    console.log(coins)
+}
+getCoins()
 
