@@ -1,6 +1,5 @@
 const hamsterBtn = document.querySelector("#hamsterBtn")
 hamsterBtn.addEventListener("click",function () {
-    console.log(5)
 })
 
 
@@ -21,15 +20,15 @@ function setDefaultCoins () {
     }}
     setDefaultCoins()
 
-function getRatio (){
-    let ratio = localStorage.getItem("ratio")
-    return ratio
-}
-getRatio()
-
 function getCoins () {
-    let coins = localStorage.getItem("coins")
+     let coins = localStorage.getItem("coins")
     console.log(coins)
 }
 getCoins()
+function sum (coins,ratio){
+    let total = coins+ratio
+    coinValeu.innerHTML= total
+
+}
+
 
