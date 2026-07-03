@@ -1,6 +1,5 @@
 const hamsterBtn = document.querySelector("#hamsterBtn")
 hamsterBtn.addEventListener("click",function () {
-    console.log(5)
 })
 
 
@@ -21,6 +20,9 @@ function setDefaultCoins () {
     }}
     setDefaultCoins()
 
-
-
+function getCoins () {
+     let coins = localStorage.getItem("coins")
+    console.log(coins)
+}
+getCoins()
 
