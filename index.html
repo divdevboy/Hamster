@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Clicker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #161616;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 380px;
+            height: 760px;
+            background: #222;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #1a1a1a;
+        }
+
+        .coins,
+        .energy {
+            background: #333;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #coinValue {
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        /* Main Click Area */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .hamster-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .glow-ring {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 215, 0, 0.2);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        #hamsterBtn {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: none;
+            background: #f5b642;
+            font-size: 120px;
+            cursor: pointer;
+            transition: transform 0.15s;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(245, 182, 66, 0.4);
+        }
+
+        #hamsterBtn:active {
+            transform: scale(0.92);
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .stats span {
+            background: #2d2d2d;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .stats b {
+            color: #ffd700;
+            margin-right: 4px;
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            width: 100%;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 10px;
+            background: #2d2d2d;
+            border-radius: 99px;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 20%;
+            background: linear-gradient(90deg, #ffd700, #ff9800);
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        .level-label {
+            font-size: 13px;
+            color: #ffd700;
+            white-space: nowrap;
+        }
+
+        /* Upgrades Section */
+        .upgrades {
+            background: #1a1a1a;
+            padding: 16px 20px 100px 20px;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #ffd700;
+        }
+
+        .upgrade-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .upgrade-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .upgrade-card:hover:not(.locked) {
+            background: #3a3a3a;
+            border-color: #ffd700;
+        }
+
+        .upgrade-card.locked {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .upgrade-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .upgrade-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .upgrade-name {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .upgrade-desc {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .upgrade-cost {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffd700;
+            flex-shrink: 0;
+        }
+
+        /* Bottom Nav */
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 380px;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #2d2d2d;
+            border-radius: 30px 30px 0 0;
+        }
+
+        nav button {
+            width: 55px;
+            height: 55px;
+            border: none;
+            border-radius: 15px;
+            background: #444;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        nav button:hover {
+            background: #555;
+        }
+
+        nav button:active {
+            transform: scale(0.95);
+        }
+
+        nav button.active {
+            background: #ffd700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div class="coins">
+            <span id="coinIcon">🪙</span>
+            <span id="coinValue">0</span>
+        </div>
+        <div class="energy">
+            ⚡
+            <span id="energyValue">100</span>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <div class="hamster-wrapper">
+            <div class="glow-ring"></div>
+            <button id="hamsterBtn">🐹</button>
+        </div>
+
+        <div class="stats">
+            <span>هر کلیک: <b id="clickPower">1</b></span>
+            <span>در ثانیه: <b id="perSecond">0</b></span>
+        </div>
+
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="level-label">سطح <span id="level">1</span></div>
+        </div>
+    </main>
+
+    <!-- Upgrades -->
+    <section class="upgrades">
+        <h2 class="section-title">⚡ آپگریدها</h2>
+        <div class="upgrade-list">
+
+            <div class="upgrade-card">
+                <div class="upgrade-icon">🌰</div>
+                <div class="upgrade-info">
+                    <span class="upgrade-name">فندق بیشتر</span>
+                    <span class="upgrade-desc">+۱ به هر کلیک</span>
+                </div>
+                <div class="upgrade-cost">
+                    <span>🪙</span>
+                    <span>۱۰</span>
+                </div>
+            </div>
+
+            <div class="upgrade-card locked">
+                <div class="upgrade-icon">🤖</div>
+                <div class="upgrade-info">
+                    <span class="upgrade-name">ربات کلیکر</span>
+                    <span class="upgrade-desc">+۱ در ثانیه</span>
+                </div>
+                <div class="upgrade-cost">
+                    <span>🪙</span>
+                    <span>۵۰</span>
+                </div>
+            </div>
+
+            <div class="upgrade-card locked">
+                <div class="upgrade-icon">🏭</div>
+                <div class="upgrade-info">
+                    <span class="upgrade-name">کارخانه فندق</span>
+                    <span class="upgrade-desc">+۵ در ثانیه</span>
+                </div>
+                <div class="upgrade-cost">
+                    <span>🪙</span>
+                    <span>۲۰۰</span>
+                </div>
+            </div>
+
+            <div class="upgrade-card locked">
+                <div class="upgrade-icon">⚡</div>
+                <div class="upgrade-info">
+                    <span class="upgrade-name">توربو شارژر</span>
+                    <span class="upgrade-desc">+۳ به هر کلیک</span>
+                </div>
+                <div class="upgrade-cost">
+                    <span>🪙</span>
+                    <span>۳۵۰</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bottom Nav -->
+    <nav>
+        <button class="active">🏠</button>
+        <button>🛒</button>
+        <button>🎯</button>
+        <button>🏆</button>
+        <button>⚙️</button>
+    </nav>
+
+</div>
+
+</body>
+</html>
