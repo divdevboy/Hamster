@@ -21,6 +21,12 @@ function setDefaultCoins () {
     }}
     setDefaultCoins()
 
+function getRatio (){
+   let ratio = localStorage.getItem("ratio")
+    return ratio
+}
+getRatio()
+
 
 
 
