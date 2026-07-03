@@ -43,3 +43,7 @@ header {
     align-items: center;
     gap: 8px;
 }
+#coinValue {
+    font-weight: 700;
+    color: #ffd700;
+}
