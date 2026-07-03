@@ -22,9 +22,14 @@ function setDefaultCoins () {
 
 function getCoins () {
      let coins = localStorage.getItem("coins")
-    console.log(coins)
+  return coins
 }
-getCoins()
+
+
+function getRatio () {
+    let ratio = localStorage.getItem("ratio")
+    return ratio
+}
 function sum (coins,ratio){
     let total = coins+ratio
     coinValeu.innerHTML= total
