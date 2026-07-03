@@ -11,73 +11,7 @@
 
 
         /* Main Click Area */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            padding: 20px;
-        }
 
-        .hamster-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .glow-ring {
-            position: absolute;
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 215, 0, 0.2);
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.4; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-        }
-
-        #hamsterBtn {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: none;
-            background: #f5b642;
-            font-size: 120px;
-            cursor: pointer;
-            transition: transform 0.15s;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 8px 20px rgba(245, 182, 66, 0.4);
-        }
-
-        #hamsterBtn:active {
-            transform: scale(0.92);
-        }
-
-        /* Stats */
-        .stats {
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            color: #aaa;
-        }
-
-        .stats span {
-            background: #2d2d2d;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-
-        .stats b {
-            color: #ffd700;
-            margin-right: 4px;
-        }
 
         /* Progress Bar */
         .progress-wrapper {
