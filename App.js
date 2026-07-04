@@ -1,3 +1,4 @@
+//add to click for coin//
 const hamsterBtn = document.querySelector("#hamsterBtn")
 hamsterBtn.addEventListener("click",function () {
     sum(getCoins(),getRatio())
@@ -14,13 +15,14 @@ function setDefaultRatio() {
     }//This code set ratio in localstorage
 }
 setDefaultRatio()
-
+//
 function setDefaultCoins () {
     if (localStorage.getItem("coins") === null) {
         localStorage.setItem("coins" , "0")
     }}
     setDefaultCoins()
 // function set default coins 0 if there arnt saved coins ///
+//function get coins //
 function getCoins () {
      let coins = localStorage.getItem("coins")
   return coins
