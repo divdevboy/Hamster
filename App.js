@@ -32,7 +32,7 @@ function getRatio () {
     return ratio
 }
 function sum (coins,ratio){
-    let total =Number(coins+ratio)
+    let total =Number(coins)+Number(ratio)
     coinValeu.innerHTML= total
     localStorage.setItem("coins",total)
 
