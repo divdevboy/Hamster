@@ -11,7 +11,7 @@ console.log(coinValeu)
 function setDefaultRatio() {
     if (localStorage.getItem("ratio") === null) {
         localStorage.setItem("ratio", "1")
-    }
+    }//This code set ratio in localstorage
 }
 setDefaultRatio()
 
@@ -30,7 +30,7 @@ function getCoins () {
 function getRatio () {
     let ratio = localStorage.getItem("ratio")
     return ratio
-}
+}//This code get ratio from localstorage and return it
 function sum (coins,ratio){
     let total =Number(coins)+Number(ratio)
     coinValeu.innerHTML= total
