@@ -21,7 +21,7 @@ function setDefaultCoins () {
         localStorage.setItem("coins" , "0")
     }}
     setDefaultCoins()
-// function set default coins 0 if there arnt saved coins ///
+// function set default coins 0 if there arnt saved coins //
 //function get coins //
 function getCoins () {
      let coins = localStorage.getItem("coins")
@@ -32,7 +32,7 @@ function getCoins () {
 function getRatio () {
     let ratio = localStorage.getItem("ratio")
     return ratio
-}//This code get ratio from localstorage and return it
+}//This code get ratio from localstorage and return it//
 function sum (coins,ratio){
     let total =Number(coins)+Number(ratio)
     coinValeu.innerHTML= total
