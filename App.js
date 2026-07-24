@@ -33,11 +33,15 @@ function getRatio () {
     let ratio = localStorage.getItem("ratio")
     return ratio
 }//This code get ratio from localstorage and return it//
-function sum (coins,ratio){
-    let total =Number(coins)+Number(ratio)
-    coinValeu.innerHTML= total
-    localStorage.setItem("coins",total)
+function sum (coins,ratio) {
+    let total = Number(coins) + Number(ratio)
+    coinValeu.innerHTML = total
+    localStorage.setItem("coins", total)
 
 }
 
 // the function show 2 number, total on the page and saved in localstorage //
+
+
+
+
