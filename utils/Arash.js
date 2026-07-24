@@ -13,10 +13,15 @@ export default class Arash{
 
 // the function show 2 number, total on the page and saved in localstorage
 buyIfAfford (coins,nutPrice) {
-        if (coins>=nutPrice) {
+    console.log("تازه وارد فانکشن شدیم" , coins, nutPrice)
+    if (coins>=nutPrice) {
+            console.log("تازه اول if", coins, nutPrice)
             let result = Number(coins) - Number(nutPrice)
+        console.log("نتیجه تفریق" , result)
            this.eisa.updateNutPriceText(result)
             this.omd.setDefaultNutPrice(result)
+            localStorage.setItem("nutPrice",result.toString())
+
         }
         else {
             window.alert("سکه کافی نمیباشد")
