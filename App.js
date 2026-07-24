@@ -27,4 +27,3 @@ arash.sum(mbn.getCoins(),"0")
 
 
 
-
