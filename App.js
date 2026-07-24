@@ -4,7 +4,7 @@ import Omd from "./utils/Omd";
 
 const hamsterBtn = document.querySelector("#hamsterBtn")
 const mbn = new Mbn()  // defin new mbn class
-const omd = new Omd
+const omd = new Omd ()
 hamsterBtn.addEventListener("click",function () {
     sum(mbn.getCoins(),omd.getRatio())
 })
