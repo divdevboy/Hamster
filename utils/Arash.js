@@ -1,4 +1,5 @@
 import Eisa from "./Eisa.js";
+import Omd from "./Omd.js";
 export default class Arash{
     constructor(){}
     sum (coins,ratio) {
@@ -12,7 +13,7 @@ export default class Arash{
 buyIfAfford (coins,nutPrice) {
         if (coins>=nutPrice) {
             let result = Number(coins) - Number(nutPrice)
-            (result)
+            nutPriceText(result)
             setDefaultNutPrice()
         }
         else {
@@ -20,4 +21,5 @@ buyIfAfford (coins,nutPrice) {
         }
 }
     eisa = new Eisa()
+    omd = new Omd()
 }
