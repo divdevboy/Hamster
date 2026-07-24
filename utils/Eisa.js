@@ -3,7 +3,7 @@ export default class Eisa {
     }
 
     updateNutPriceText(number) {
-        const nutPriceText = document.querySelector("#nutPriceText"
+        const nutPriceText = document.querySelector("#nutPriceText")
             nutPriceText.innerHTML = number
 
 
