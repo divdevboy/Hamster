@@ -1,17 +1,19 @@
 //add to click for coin//
 import Mbn from "./utils/Mbn.js";
 import Omd from "./utils/Omd";
+import Arash from "./utils/Arash";
 
 const hamsterBtn = document.querySelector("#hamsterBtn")
-const mbn = new Mbn()  // defin new mbn class
+const mbn = new Mbn()  // define new mbn class
 const omd = new Omd ()
+const arash = new Arash()
 hamsterBtn.addEventListener("click",function () {
-    sum(mbn.getCoins(),omd.getRatio())
+    arash.sum(mbn.getCoins(),omd.getRatio())
 })
 
 
-const coinValeu= document.querySelector("#coinValue")
-console.log(coinValeu)
+const coinValue= document.querySelector("#coinValue")
+console.log(coinValue)
 
 //This code finds the coinValue element and prints it in the console//
 mbn.setDefaultRatio()
@@ -23,14 +25,7 @@ mbn.setDefaultRatio()
 
 
 //This code get ratio from localstorage and return it//
-function sum (coins,ratio) {
-    let total = Number(coins) + Number(ratio)
-    coinValeu.innerHTML = total
-    localStorage.setItem("coins", total)
 
-}
-
-// the function show 2 number, total on the page and saved in localstorage //
 
 
 
