@@ -13,6 +13,7 @@ hamsterBtn.addEventListener("click",function () {
     arash.sum(mbn.getCoins(),omd.getRatio())
 })
 nut.addEventListener("click",function (){
+   arash.buyIfAfford()
 })
 //This code finds the coinValue element and prints it in the console//
 mbn.setDefaultRatio()
