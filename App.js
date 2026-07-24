@@ -1,7 +1,10 @@
 //add to click for coin//
+import Mbn from "./utils/Mbn.js";
+
 const hamsterBtn = document.querySelector("#hamsterBtn")
+const mbn = new Mbn()  // defin new mbn class
 hamsterBtn.addEventListener("click",function () {
-    sum(getCoins(),getRatio())
+    sum(mbn.getCoins(),getRatio())
 })
 
 
@@ -9,24 +12,12 @@ const coinValeu= document.querySelector("#coinValue")
 console.log(coinValeu)
 
 //This code finds the coinValue element and prints it in the console//
-function setDefaultRatio() {
-    if (localStorage.getItem("ratio") === null) {
-        localStorage.setItem("ratio", "1")
-    }//This code set ratio in localstorage
-}
-setDefaultRatio()
-//
-function setDefaultCoins () {
-    if (localStorage.getItem("coins") === null) {
-        localStorage.setItem("coins" , "0")
-    }}
-    setDefaultCoins()
-// function set default coins 0 if there arnt saved coins //
-//function get coins //
-function getCoins () {
-     let coins = localStorage.getItem("coins")
-  return coins
-}
+mbn.setDefaultRatio()
+
+
+// function set default coins 0 if there aren't saved coins
+    mbn. setDefaultCoins()
+
 
 
 function getRatio () {
