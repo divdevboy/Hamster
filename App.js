@@ -1,4 +1,3 @@
-//add to click for coin//
 import Mbn from "./utils/Mbn.js";
 import Omd from "./utils/Omd.js";
 import Arash from "./utils/Arash.js";
