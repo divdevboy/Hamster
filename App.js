@@ -1,8 +1,10 @@
 //add to click for coin//
 import Mbn from "./utils/Mbn.js";
-import Omd from "./utils/Omd";
-import Arash from "./utils/Arash";
+import Omd from "./utils/Omd.js";
+import Arash from "./utils/Arash.js";
 
+const coinValue= document.querySelector("#coinValue")
+console.log(coinValue)
 const hamsterBtn = document.querySelector("#hamsterBtn")
 const mbn = new Mbn()  // define new mbn class
 const omd = new Omd ()
@@ -12,8 +14,7 @@ hamsterBtn.addEventListener("click",function () {
 })
 
 
-const coinValue= document.querySelector("#coinValue")
-console.log(coinValue)
+
 
 //This code finds the coinValue element and prints it in the console//
 mbn.setDefaultRatio()
