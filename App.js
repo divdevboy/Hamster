@@ -16,6 +16,7 @@ nut.addEventListener("click",function (){
 mbn.setDefaultRatio()
 // function set default coins 0 if there aren't saved coins
     mbn. setDefaultCoins()
+arash.sum(mbn.getCoins(),"0")
 
 
 
