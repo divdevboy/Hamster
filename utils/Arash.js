@@ -27,4 +27,10 @@ buyIfAfford (coins,nutPrice) {
         }
 }
 
+    updateRatio () {
+        let ratio = localStorage.getItem("ratio")
+        let newRatio = Number(ratio) * 2
+        localStorage.setItem("ratio", newRatio)
 }
+}
+
