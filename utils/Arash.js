@@ -4,7 +4,7 @@ export default class Arash{
     constructor(){}
     eisa = new Eisa()
     omd = new Omd()
-    sum (coins,ratio) {
+       sum (coins,ratio) {
         let total = Number(coins) + Number(ratio)
         coinValue.innerHTML = total
         localStorage.setItem("coins", total)
@@ -28,3 +28,8 @@ buyIfAfford (coins,nutPrice) {
 }
 
 }
+
+
+
+
+
