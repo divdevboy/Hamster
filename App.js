@@ -27,7 +27,3 @@ omd.setDefaultNutPrice()
 
 
 
-
-
-
-

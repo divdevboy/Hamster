@@ -11,18 +11,15 @@ export default class Omd{
         let nutPrice =  localStorage.getItem("nutPrice")
         if (nutPrice===null){
             localStorage.setItem("nutPrice","100")
+
             this.eisa.updateNutPriceText(100)
         } else {
             this.eisa.updateNutPriceText(nutPrice)
 
         }
     }
-
-
-
-
-
-
-
-
 }
+function updateCoinUi (number,element ){
+    element.innerHTML = number
+}
+
