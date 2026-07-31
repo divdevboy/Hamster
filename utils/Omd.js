@@ -17,9 +17,11 @@ export default class Omd{
             this.eisa.updateNutPriceText(nutPrice)
 
         }
+
+
     }
-}
-function updateCoinUi (number,element ){
-    element.innerHTML = number
+     updateCoinUi (number,element ){
+        element.innerHTML = number
+    }
 }
 

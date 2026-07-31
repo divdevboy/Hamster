@@ -12,7 +12,7 @@ export default class Arash{
     }
 
 // the function show 2 number, total on the page and saved in localstorage
-buyIfAfford (coins,nutPrice) {
+buyIfAfford (coins,nutPrice,coinElement) {
     console.log("تازه وارد فانکشن شدیم" , coins, nutPrice)
     if (Number(coins)>=Number(nutPrice)){
             console.log("تازه اول if", coins, nutPrice)
@@ -21,10 +21,11 @@ buyIfAfford (coins,nutPrice) {
            this.eisa.updateNutPriceText(result)
             this.omd.setDefaultNutPrice(result)
             localStorage.setItem("coins",result.toString())
-
+            this.omd.updateCoinUi(result,coinElement)
         } else {
             window.alert("سکه کافی نمیباشد")
         }
+
 }
 
     updateRatio () {

@@ -14,7 +14,7 @@ hamsterBtn.addEventListener("click",function () {
 })
 nut.addEventListener("click",function (){
     let nutPrice =  localStorage.getItem("nutPrice")
-   arash.buyIfAfford(mbn.getCoins(),nutPrice)
+   arash.buyIfAfford(mbn.getCoins(),nutPrice,coinValue)
 })
 //This code finds the coinValue element and prints it in the console//
 mbn.setDefaultRatio()
