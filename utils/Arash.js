@@ -22,6 +22,7 @@ buyIfAfford (coins,nutPrice,coinElement) {
             this.omd.setDefaultNutPrice(result)
             localStorage.setItem("coins",result.toString())
             this.omd.updateCoinUi(result,coinElement)
+        this.updateRatio()
         } else {
             window.alert("سکه کافی نمیباشد")
         }
@@ -31,7 +32,7 @@ buyIfAfford (coins,nutPrice,coinElement) {
     updateRatio () {
         let ratio = localStorage.getItem("ratio")
         let newRatio = Number(ratio) * 2
-        localStorage.setItem("ratio", newRatio)
+        localStorage.setItem("ratio", newRatio.toString())
 }
 }
 
