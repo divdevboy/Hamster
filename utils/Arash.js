@@ -20,7 +20,7 @@ buyIfAfford (coins,nutPrice) {
         console.log("نتیجه تفریق" , result)
            this.eisa.updateNutPriceText(result)
             this.omd.setDefaultNutPrice(result)
-            localStorage.setItem("nutPrice",result.toString())
+            localStorage.setItem("coins",result.toString())
 
         }
         else {
