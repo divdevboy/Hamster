@@ -23,6 +23,8 @@ buyIfAfford (coins,nutPrice,coinElement) {
             localStorage.setItem("coins",result.toString())
             this.omd.updateCoinUi(result,coinElement)
         this.updateRatio()
+
+        this.eisa.updateNutPrice1()
         } else {
             window.alert("سکه کافی نمیباشد")
         }
