@@ -25,6 +25,8 @@ mbn.setDefaultRatio()
 arash.sum(mbn.getCoins(),"0")
 // set default price for nut
 omd.setDefaultNutPrice()
+arash.setDefaultEnergyValue()
+
 
 
 
