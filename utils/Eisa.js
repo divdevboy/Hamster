@@ -11,8 +11,9 @@ export default class Eisa {
  updateNutPrice1() {
     let nutPrice = localStorage.getItem("nutPrice")
     let result = nutPrice*1.5
-     this.updateNutPriceText(result)
-    localStorage.setItem("nutPrice",result)
+     let a = Math.round(result)
+     this.updateNutPriceText(a)
+    localStorage.setItem("nutPrice",a.toString())
 }}
 
 
