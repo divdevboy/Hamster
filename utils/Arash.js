@@ -16,7 +16,6 @@ export default class Arash {
 
 // the function show 2 number, total on the page and saved in localstorage
     buyIfAfford(coins, nutPrice, coinElement) {
-        console.log("تازه وارد فانکشن شدیم", coins, nutPrice)
         if (Number(coins) >= Number(nutPrice)) {
             console.log("تازه اول if", coins, nutPrice)
             let result = Number(coins) - Number(nutPrice)
