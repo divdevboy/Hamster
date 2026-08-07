@@ -47,4 +47,8 @@ export default class Arash {
 
 
     }
-}
+    setDefaultEnergyValue (){
+        if (localStorage.getItem("EnergyValue") === null) {
+            localStorage.setItem("EnergyValue", "100")
+        }
+}}
