@@ -23,5 +23,16 @@ export default class Omd{
      updateCoinUi (number,element ){
         element.innerHTML = number
     }
+    showTheHunderd(energyValue,text){
+     energyValue.innerHTML=text
+
+
 }
+
+}
+
+
+
+
+
 

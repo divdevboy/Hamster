@@ -5,6 +5,7 @@ import Eisa from "./utils/Eisa.js";
 const coinValue= document.querySelector("#coinValue")
 const hamsterBtn = document.querySelector("#hamsterBtn")
 const nut = document.querySelector("#nut")
+const energy = document.querySelector("#energyValue")
 const mbn = new Mbn()  // define new mbn class
 const omd = new Omd ()
 const arash = new Arash()
