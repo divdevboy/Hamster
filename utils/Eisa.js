@@ -1,3 +1,5 @@
+import Omd from "./Omd.js";
+
 export default class Eisa {
     constructor() {
     }
@@ -14,7 +16,22 @@ export default class Eisa {
      let a = Math.round(result)
      this.updateNutPriceText(a)
     localStorage.setItem("nutPrice",a.toString())
-}}
+}
+    reduceEnergy(energyText) {
+        let energy = localStorage.getItem("EnergyValue") //100coin
+        let resulte = energy-1 //99resulte
+        localStorage.setItem("EnergyValue",resulte)
+let omd = new Omd()
+        omd.showTheHunderd(energyText,resulte)
+    }
+
+
+
+
+
+}
+
+
 
 
 

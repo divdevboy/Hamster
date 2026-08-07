@@ -12,6 +12,7 @@ const arash = new Arash()
 const eisa = new Eisa()
 hamsterBtn.addEventListener("click",function () {
     arash.sum(mbn.getCoins(),omd.getRatio())
+    eisa.reduceEnergy(energy)
 })
 nut.addEventListener("click",function (){
     let nutPrice =  localStorage.getItem("nutPrice")
